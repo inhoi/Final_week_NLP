@@ -50,3 +50,29 @@ $$ x_t = y_{t-1} -->     p_t $$
 
 $$ x_t = \hat{x}_{t-1} -->       (1 - p_t) $$
 
+
+##  Why do we choose decoder only model over encoder only model for text generation?
+
+1. Cost of Training
+
+* Multitask Finetuning: Encoder-Decoder (ED) models require multitask finetuning on labeled data to achieve maximum potential, which can be costly, especially for larger models.
+* Zero-Shot Generalization: Causal Decoder (CD) models excel in performance due to their strong zero-shot generalization capabilities, aligning well with self-supervised learning on large-scale corpora, thus potentially reducing training costs.
+
+2. In-Context Learning from Prompts
+
+* Prompt Engineering: Applying few-shot examples through prompt engineering helps Large Language Models (LLMs) understand context or tasks.
+* Decoder vs. Encoder-Decoder: Prompting has a more straightforward effect on decoder-only models due to their lack of need for translating context into an intermediate form before generation. Encoder-decoder models can also benefit, but optimal performance requires precise tuning of the encoder.
+
+3. Efficiency Optimization
+
+* Reuse of K and V Matrices: Decoder-only models enhance efficiency by reusing Key (K) and Value (V) matrices from previous tokens during the decoding process.
+* Causal Attention Mechanism: Due to causal attention, K and V matrices for past tokens remain unchanged, reducing the need for recomputation and thus lowering computational costs and speeding up generation during inference.
+
+4. Autoregressive vs. Bidirectional Attention
+
+* Attention Mechanism: Decoder-only models use autoregressive (causal) attention, leading to a constrained, lower triangular attention matrix which maintains full rank status, suggesting a theoretically stronger expressive capability.
+* Bidirectional Attention Limitations: Bidirectional attention in encoder-decoder architectures does not guarantee full rank status of the attention matrix, which may limit model performance.
+* Experimental Findings: An experiment splitting bidirectional attention into Forward-Backward (FB) attention showed only marginal improvements over full bidirectional attention, suggesting minimal impact on performance when models are well-trained.
+* Learning Implications: Bidirectional attention can expedite learning but may inhibit the acquisition of deeper predictive patterns necessary for effective generation.
+
+
