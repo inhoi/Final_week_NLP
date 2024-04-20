@@ -63,6 +63,9 @@ $$ x_t = \hat{x}_{t-1} -->       (1 - p_t) $$
 * Prompt Engineering: Applying few-shot examples through prompt engineering helps Large Language Models (LLMs) understand context or tasks.
 * Decoder vs. Encoder-Decoder: Prompting has a more straightforward effect on decoder-only models due to their lack of need for translating context into an intermediate form before generation. Encoder-decoder models can also benefit, but optimal performance requires precise tuning of the encoder.
 
+![image](https://github.com/inhoi/Final_week_NLP/assets/76868046/65e4f3ba-4ad3-4cd3-aa18-50c61879d31f)
+
+
 3. Efficiency Optimization
 
 * Reuse of K and V Matrices: Decoder-only models enhance efficiency by reusing Key (K) and Value (V) matrices from previous tokens during the decoding process.
@@ -74,5 +77,7 @@ $$ x_t = \hat{x}_{t-1} -->       (1 - p_t) $$
 * Bidirectional Attention Limitations: Bidirectional attention in encoder-decoder architectures does not guarantee full rank status of the attention matrix, which may limit model performance.
 * Experimental Findings: An experiment splitting bidirectional attention into Forward-Backward (FB) attention showed only marginal improvements over full bidirectional attention, suggesting minimal impact on performance when models are well-trained.
 * Learning Implications: Bidirectional attention can expedite learning but may inhibit the acquisition of deeper predictive patterns necessary for effective generation.
+
+![image](https://github.com/inhoi/Final_week_NLP/assets/76868046/3dbbb736-ca77-4a4b-b1fa-68df34792fdc)
 
 
