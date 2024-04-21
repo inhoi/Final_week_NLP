@@ -80,4 +80,9 @@ $$ x_t = \hat{x}_{t-1} -->       (1 - p_t) $$
 
 ![image](https://github.com/inhoi/Final_week_NLP/assets/76868046/3dbbb736-ca77-4a4b-b1fa-68df34792fdc)
 
+## Overview of Decoder Only Model
+
+![image](https://github.com/inhoi/Final_week_NLP/assets/76868046/b60a724d-d9a1-4d71-8301-fb7b08fb5aa3)
+
+![image](https://github.com/inhoi/Final_week_NLP/assets/76868046/e0e74d53-5f42-4a79-b996-55d5563f95cb)
 
